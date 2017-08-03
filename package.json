@@ -1,0 +1,39 @@
+{
+  "devDependencies": {
+    "amazeui": "^2.7.2",
+    "autoprefixer": "^6.5.0",
+    "browser-sync": "^2.17.1",
+    "cross-env": "^3.1.2",
+    "css-loader": "^0.25.0",
+    "del-cli": "^0.2.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^2.0.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "highlight.js": "^9.7.0",
+    "html-webpack-plugin": "^2.22.0",
+    "image-webpack-loader": "^2.0.0",
+    "jquery": "^2.2.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^0.13.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.8.3",
+    "webpack-hot-middleware": "^2.12.2"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "private": true,
+  "scripts": {
+    "clean": "del dist",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "lint": "eslint app/js/**",
+    "start": "node serve.js",
+    "start-prod": "npm run build && browser-sync start -s dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
